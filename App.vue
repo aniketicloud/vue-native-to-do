@@ -1,6 +1,7 @@
 <template>
   <view class="container">
-    <text class="text-color-primary">{{ message }}</text>
+    <button :onPress="handleBtnClickCount" :title="btnTitle"></button>
+    <text class="text-container">{{ btnClickCount }}</text>
   </view>
 </template>
 
@@ -8,8 +9,15 @@
 export default {
   data() {
     return {
-      message: "Hello World",
+      btnTitle: "Touch Me",
+      btnClickCount: 0,
     };
+  },
+
+  methods: {
+    handleBtnClickCount() {
+      this.btnClickCount++;
+    },
   },
 };
 </script>
