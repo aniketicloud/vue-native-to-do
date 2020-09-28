@@ -1,8 +1,18 @@
 <template>
   <view class="container">
-    <text class="text-color-primary">Hello Nike</text>
+    <text class="text-color-primary">{{ message }}</text>
   </view>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      message: "Hello World",
+    };
+  },
+};
+</script>
 
 <style>
 .container {
