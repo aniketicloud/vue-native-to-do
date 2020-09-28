@@ -1,7 +1,16 @@
 <template>
   <view class="container">
-    <button :onPress="handleBtnClickCount" :title="btnTitle"></button>
-    <text class="text-container">{{ btnClickCount }}</text>
+    <view class="btn-container">
+      <button title="show A" :on-press="() => handleBtnClick('A')" />
+      <button title="show B" :on-press="() => handleBtnClick('B')" />
+      <button title="show C" :on-press="() => handleBtnClick('C')" />
+    </view>
+    <view>
+      <text v-if="type === 'A'"> A </text>
+      <text v-else-if="type === 'B'"> B </text>
+      <text v-else-if="type === 'C'"> C </text>
+      <text v-else> NOT A/B/C </text>
+    </view>
   </view>
 </template>
 
@@ -9,14 +18,13 @@
 export default {
   data() {
     return {
-      btnTitle: "Touch Me",
-      btnClickCount: 0,
+      type: Number,
     };
   },
 
   methods: {
-    handleBtnClickCount() {
-      this.btnClickCount++;
+    handleBtnClick(type) {
+      this.type = type;
     },
   },
 };
