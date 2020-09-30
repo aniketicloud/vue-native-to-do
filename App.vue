@@ -1,19 +1,13 @@
 <template>
-  <app-show-ABC></app-show-ABC>
+  <hello-world></hello-world>
 </template>
 
 <script>
-import ShowABC from "./components/examples/ShowABC";
+import HelloWorld from "./components/examples/HelloWorld/HelloWorld";
 export default {
   components: {
-    appShowABC: ShowABC,
+    HelloWorld,
   },
-
-  data() {
-    return {};
-  },
-
-  methods: {},
 };
 </script>
 
