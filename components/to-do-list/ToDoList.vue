@@ -18,26 +18,19 @@
 
 <script>
 export default {
-  data() {
-    return {
-      todos: [
-        {
-          id: 0,
-          title: "Complete Vue native",
-          done: false,
-        },
-        {
-          id: 1,
-          title: "Revise your Chinese",
-          done: false,
-        },
-      ],
-    };
-  },
+  props: ["todos"],
 
   methods: {
-    toggleDone() {},
-    removeTodo() {},
+    toggleDone(id) {
+      this.todos = this.todos.map((todo) => {
+        if (todo.id == id) todo.done = !todo.done;
+        return todo;
+      });
+    },
+
+    removeTodo(id) {
+      this.todos = this.todos.filter((todo) => todo.id !== id);
+    },
   },
 };
 </script>

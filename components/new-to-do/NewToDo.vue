@@ -9,6 +9,8 @@
 
 <script>
 export default {
+  props: ["todos"],
+
   data() {
     return {
       newTodoText: "",
@@ -16,7 +18,15 @@ export default {
   },
 
   methods: {
-    newTodo() {},
+    newTodo() {
+      this.todos.push({
+        id: this.todos.length + 1,
+        title: this.newTodoText,
+        done: false,
+      });
+
+      this.newTodoText = "";
+    },
   },
 };
 </script>

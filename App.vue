@@ -2,8 +2,8 @@
   <view class="container">
     <app-status-bar color="#ffce00" />
     <app-main-header title="to-do-app"></app-main-header>
-    <app-new-to-do></app-new-to-do>
-    <app-to-do-list></app-to-do-list>
+    <app-new-to-do :todos="todos"></app-new-to-do>
+    <app-to-do-list :todos="todos"></app-to-do-list>
   </view>
 </template>
 
@@ -19,6 +19,23 @@ export default {
     appMainHeader: MainHeader,
     appNewToDo: NewToDo,
     appToDoList: ToDoList,
+  },
+
+  data() {
+    return {
+      todos: [
+        {
+          id: 0,
+          title: "Complete Vue native",
+          done: false,
+        },
+        {
+          id: 1,
+          title: "Revise your Chinese",
+          done: false,
+        },
+      ],
+    };
   },
 };
 </script>
